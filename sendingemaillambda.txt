@@ -1,8 +1,8 @@
 var AWS = require('aws-sdk');
 var ses = new AWS.SES();
  
-var RECEIVER = 'sourav@domain.com';
-var SENDER = 'no-reply@domain.com';
+var RECEIVER = 'durgaprasad5331@gmail.com';
+var SENDER = 'durgaprasad5331@gmail.com';
 
 var response = {
  "isBase64Encoded": false,
@@ -28,12 +28,12 @@ function sendEmail (event, done) {
         Message: {
             Body: {
                 Text: {
-                    Data: 'name: ' + event.name + '\nphone: ' + event.phone + '\nemail: ' + event.email + '\ndesc: ' + event.desc,
+                    Data: 'email ' + event.email + '\n subject ' + event.subject+ '\n body ' + event.body ,
                     Charset: 'UTF-8'
                 }
             },
             Subject: {
-                Data: 'Website Referral Form: ' + event.name,
+                Data: 'Someone contacted you on your contact form ' + event.name,
                 Charset: 'UTF-8'
             }
         },
